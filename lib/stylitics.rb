@@ -41,7 +41,7 @@ module Stylitics
     private
 
     def get(path)
-      HTTParty.get BASE_URL + path + "?auth_token=#{auth_token}"
+      HTTParty.get(BASE_URL + path + "?auth_token=#{auth_token}")
     end
 
   end
