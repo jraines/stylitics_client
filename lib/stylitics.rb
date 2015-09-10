@@ -36,6 +36,13 @@ module Stylitics
       JSON.parse(resp.body)
     end
 
+    def collages(ids)
+      qs = ids.map do |id|
+        "ids[]=#{id}"
+      end.join("&")
+      HTTParty.get(BASE_URL + '/collage_items' + "?auth_token=#{auth_token}&#{qs}")
+    end
+
     #items is broken
 
     private
